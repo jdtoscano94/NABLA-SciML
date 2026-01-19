@@ -1,0 +1,8 @@
+jax
+flax
+optax
+numpy
+scipy
+matplotlib
+tqdm
+pyDOE

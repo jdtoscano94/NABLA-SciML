@@ -1,0 +1,6 @@
+pyproject.toml
+Crunch.egg-info/PKG-INFO
+Crunch.egg-info/SOURCES.txt
+Crunch.egg-info/dependency_links.txt
+Crunch.egg-info/requires.txt
+Crunch.egg-info/top_level.txt

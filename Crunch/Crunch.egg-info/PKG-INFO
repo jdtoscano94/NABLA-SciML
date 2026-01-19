@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: Crunch
+Version: 0.1.0
+Summary: My custom JAX/Flax research library
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: jax
+Requires-Dist: flax
+Requires-Dist: optax
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: tqdm
+Requires-Dist: pyDOE

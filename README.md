@@ -1,58 +1,128 @@
-# Learning-PIML-in-Python-PINNs-DeepONets-RBA
+# $\nabla$ NABLA-SciML
+**N**eural **A**lgorithms & **B**asis **L**earning **A**pproximations for **S**cientific **M**achine **L**earning
 
-Hi, I’m Juan Diego Toscano. Thanks for stopping by.
+Welcome to **$\nabla$ NABLA-SciML**!
 
-This repository will help you to get involved in the physics-informed machine learning world. Inside the Tutorials folders, you will find several step-by-step guides on the basic concepts required to run and understand  Physics-informed Machine Learning models (from approximating functions, solving and discovering ODE/PDEs with PINNs,  to solving parametric PDEs with DeepONets). 
+I am **Juan Diego Toscano**, a PhD Candidate working under the mentorship of **Prof. George Karniadakis** since 2022. My research delves into the realm of Scientific Machine Learning (SciML), with a specific focus on developing reliable and stable machine learning methods to study and understand complex physical systems that cannot be analyzed using traditional techniques (such as cerebrospinal fluid flow or turbulent flows).
 
-Also, for advanced users, you can find our latest research in PINNs to achieve state-of-the-art performance using residual-based attention (RBA).
+**NABLA** is a collection of my ongoing work and serves as a unified framework for efficient and reproducible implementations of Physics-Informed Neural Networks (PINNs), DeepONets, and novel architectures like KANs.
 
-I reviewed some of these problems on my YouTube channel, so please watch them if you have time.
+### Repository Structure
+The codebase includes separate modules for:
 
-PINNs Youtube Tutorial:https://youtu.be/AXXnSzmpyoI
+1.  **Tutorials**: Basic introductions to PINNs and DeepONets using both PyTorch and JAX.
+2.  **RBA**: Code for Residual-Based Attention mechanisms [1]. Our official repository is available at: [rba-pinns](https://github.com/soanagno/rba-pinns).
+3.  **cKANs**: Implementations for the comprehensive comparison between MLP and KAN representations [2].
+4.  **KKANs**: Source code for Kurkova-Kolmogorov-Arnold Networks [3]. Our official repository is available at: [KKANs](https://github.com/jdtoscano94/Kurkova_Kolmogorov_Arnold_Networks_KKANs.git).
+5.  **vRBA**: A Variational Framework for Residual-Based Adaptivity [4]. **Note:** This module includes our custom, highly accurate implementation of the **Self-Scaling Broyden (SSBroyden)** optimizer.
+6.  **AIVT**: The code for Turbulent Thermal Convection [5] is hosted in its own dedicated repository: [Instant-AIVT](https://github.com/jdtoscano94/Instant-AIVT).
+7.  **MR-AIV**: Code for Brain-wide Fluid Flow [6] will be released soon.
+## 🛠️ Installation
 
-Inverse PINNs Youtube Tutorial: https://youtu.be/77jChHTcbv0
+**Note on Repository Structure:**
+* **RBA, cKANs, and KKANs:** These directories are **self-contained**. They can be run directly as standalone scripts, provided you have a valid JAX installation.
+* **vRBA (and SSBroyden):** To use the Variational Residual-Based Adaptivity framework and our highly accurate **SSBroyden** optimizer, you must install the `Crunch` library using the steps below.
 
-PI-DeepONets Youtube Tutorial:https://youtu.be/YpNYVD9B_Js
+### Setup Instructions (Required for vRBA)
 
-Also, if you are interested and PINNs and Machine Learning, please consider subscribing to the Crunch Group (Brown University) Youtube channel. They upload weekly seminars on Scientific Machine Learning.
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/jdtoscano94/NABLA-SciML.git](https://github.com/jdtoscano94/NABLA-SciML.git)
+    cd NABLA-SciML
+    ```
 
-https://www.youtube.com/channel/UC2ZZB80udkRvWQ4N3a8DOKQ
+2.  **Create and activate a virtual environment (Recommended):**
+    ```bash
+    conda create -n nabla_env python=3.10
+    conda activate nabla_env
+    ```
+
+3.  **Install JAX with GPU support:**
+    *(This is required for all modules. We recommend installing it explicitly first to ensure CUDA support)*
+    ```bash
+    pip install -U "jax[cuda12]"
+    ```
+
+4.  **Install the NABLA package:**
+    This installs the library in editable mode, which is necessary to import the vRBA models and the SSBroyden optimizer.
+    ```bash
+    pip install -e .
+    ```
 
 
-**Note:** 
-The tutorials in this repository were taken from:
+## 📚 References
 
-DeepXDE library: https://deepxde.readthedocs.io/en/latest/
+If you use code from this repository in your research, please consider citing the relevant papers below:
 
-PINNs Repository 1: https://github.com/omniscientoctopus/Physics-Informed-Neural-Networks/tree/main/PyTorch/Burgers'%20Equation
+### [1] Residual-Based Attention (RBA)
+```bibtex
+@article{anagnostopoulos2024residual,
+  title={Residual-based attention in physics-informed neural networks},
+  author={Anagnostopoulos, Sokratis J and Toscano, Juan Diego and Stergiopulos, Nikolaos and Karniadakis, George Em},
+  journal={Computer Methods in Applied Mechanics and Engineering},
+  volume={421},
+  pages={116805},
+  year={2024},
+  publisher={Elsevier}
+}
+```
 
-PINNs Repository 2: https://github.com/alexpapados/Physics-Informed-Deep-Learning-Solid-and-Fluid-Mechanics.
+### [2] Comprehensive KANs (cKANs)
+```bibtex
+@article{shukla2024comprehensive,
+  title={A comprehensive and FAIR comparison between MLP and KAN representations for differential equations and operator networks},
+  author={Shukla, Khemraj and Toscano, Juan Diego and Wang, Zhicheng and Zou, Zongren and Karniadakis, George Em},
+  journal={Computer Methods in Applied Mechanics and Engineering},
+  volume={431},
+  pages={117290},
+  year={2024},
+  publisher={Elsevier}
+}
+```
 
-DeepOnets Repository 1: https://github.com/PredictiveIntelligenceLab/Physics-informed-DeepONets
+### [3] Kurkova-Kolmogorov-Arnold Networks (KKANs)
+```bibtex
+@article{toscano2025kkans,
+  title={KKANs: Kurkova-Kolmogorov-Arnold networks and their learning dynamics},
+  author={Toscano, Juan Diego and Wang, Li-Lian and Karniadakis, George Em},
+  journal={Neural Networks},
+  volume={191},
+  pages={107831},
+  year={2025},
+  publisher={Elsevier}
+}
+```
 
-Also here is our official implementation of RBA weights in PyTorch:
+### [4] Variational Residual-Based Adaptivity (vRBA)
+```bibtex
+@article{toscano2025variational,
+  title={A Variational Framework for Residual-Based Adaptivity in Neural PDE Solvers and Operator Learning},
+  author={Toscano, Juan Diego and Chen, Daniel T and Oommen, Vivek and Darbon, J{'e}r{\^o}me and Karniadakis, George Em},
+  journal={arXiv preprint arXiv:2509.14198},
+  year={2025}
+}
+```
 
-RBA Repository: https://github.com/soanagno/rba-pinns
+### [5] AIVT (Turbulence Inference)
+```bibtex
+@article{toscano2025aivt,
+  title={AIVT: Inference of turbulent thermal convection from measured 3D velocity data by physics-informed Kolmogorov-Arnold networks},
+  author={Toscano, Juan Diego and K{\"a}ufer, Theo and Wang, Zhibo and Maxey, Martin and Cierpka, Christian and Karniadakis, George Em},
+  journal={Science advances},
+  volume={11},
+  number={19},
+  pages={eads5236},
+  year={2025},
+  publisher={American Association for the Advancement of Science}
+}
+```
 
-
-
-# References
-[1] Anagnostopoulos, S. J., Toscano, J. D., Stergiopulos, N., & Karniadakis, G. E. (2024). Residual-based attention in physics-informed neural networks. Computer Methods in Applied Mechanics and Engineering, 421, 116805.
-
-[2] Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2017). Physics informed deep learning (part i): Data-driven solutions of nonlinear partial differential equations. arXiv preprint arXiv:1711.10561. http://arxiv.org/pdf/1711.10561v1
-
-[3] Lu, L., Meng, X., Mao, Z., & Karniadakis, G. E. (1907). DeepXDE: A deep learning library for solving differential equations,(2019). URL http://arxiv. org/abs/1907.04502. https://arxiv.org/abs/1907.04502
-
-[4] Rackauckas Chris, Introduction to Scientific Machine Learning through Physics-Informed Neural Networks. https://book.sciml.ai/notes/03/
-
-[5] Repository: Physics-Informed-Neural-Networks (PINNs).https://github.com/omniscientoctopus/Physics-Informed-Neural-Networks/tree/main/PyTorch/Burgers'%20Equation
-
-[6] Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2017). Physics Informed Deep Learning (part ii): Data-driven Discovery of Nonlinear Partial Differential Equations. arXiv preprint arXiv:1711.10566. https://arxiv.org/abs/1711.10566
-
-[7] Repository: Physics-Informed Deep Learning and its Application in Computational Solid and Fluid Mechanics.https://github.com/alexpapados/Physics-Informed-Deep-Learning-Solid-and-Fluid-Mechanics.
-
-[8] Lu, L., Jin, P., & Karniadakis, G. E. (2019). Deeponet: Learning nonlinear operators for identifying differential equations based on the universal approximation theorem of operators. arXiv preprint arXiv:1910.03193.
-
-[9] Wang, S., Wang, H., & Perdikaris, P. (2021). Learning the solution operator of parametric partial differential equations with physics-informed DeepONets. Science advances, 7(40), eabi8605.
-
-[10] Shukla, K., Toscano, J. D., Wang, Z., Zou, Z., & Karniadakis, G. E. (2024). A comprehensive and fair comparison between mlp and kan representations for differential equations and operator networks. Computer Methods in Applied Mechanics and Engineering, 431, 117290.
+### [6] MR-AIV (Brain Fluid Flow)
+```bibtex
+@article{toscano2025mr,
+  title={MR-AIV reveals in vivo brain-wide fluid flow with physics-informed AI},
+  author={Toscano, Juan Diego and Guo, Yisen and Wang, Zhibo and Vaezi, Mohammad and Mori, Yuki and Karniadakis, George Em and Boster, Kimberly AS and Kelley, Douglas H},
+  journal={bioRxiv},
+  year={2025}
+}
+```
