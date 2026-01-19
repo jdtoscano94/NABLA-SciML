@@ -20,8 +20,8 @@ The codebase includes separate modules for:
 ## 🛠️ Installation
 
 **Note on Repository Structure:**
-* **RBA, cKANs, and KKANs:** These directories are **self-contained**. They can be run directly as standalone scripts, provided you have a valid JAX installation.
-* **vRBA (and SSBroyden):** To use the Variational Residual-Based Adaptivity framework and our highly accurate **SSBroyden** optimizer, you must install the `Crunch` library using the steps below.
+* **RBA and cKANs:** These directories are **self-contained**. They can be run directly as standalone scripts, provided you have a valid JAX installation.
+* **KKANS and vRBA (and SSBroyden):** To use the Variational Residual-Based Adaptivity framework and our highly accurate **SSBroyden** optimizer, you must install the `Crunch` library using the steps below.
 
 ### Setup Instructions (Required for vRBA)
 
