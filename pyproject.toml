@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Crunch"
+version = "0.1.0"
+description = "My custom JAX/Flax research library"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "jax",
+    "flax",
+    "optax",
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "tqdm",
+    "pyDOE"
+]
+
+[tool.setuptools.packages.find]
+include = ["Crunch*"]
