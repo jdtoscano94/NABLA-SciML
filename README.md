@@ -5,12 +5,12 @@ Welcome to **$\nabla$ NABLA-SciML**!
 
 I am **Juan Diego Toscano**, a PhD Candidate working under the mentorship of **Prof. George Karniadakis** since 2022. My research delves into the realm of Scientific Machine Learning (SciML), with a specific focus on developing reliable and stable machine learning methods to study and understand complex physical systems that cannot be analyzed using traditional techniques (such as cerebrospinal fluid flow or turbulent flows).
 
-**NABLA** is a collection of my ongoing work and serves as a unified framework for efficient and reproducible implementations of Physics-Informed Neural Networks (PINNs), DeepONets, and novel architectures like KANs.
+**NABLA** is a collection of my ongoing work and serves as a unified framework for efficient and reproducible implementations of Physics-Informed Neural Networks (PINNs), DeepONets, and newer architectures like KANs.
 
 ### Repository Structure
 The codebase includes separate modules for:
 
-1.  **Tutorials**: Basic introductions to PINNs and DeepONets using both PyTorch and JAX. Most of these examples have a corresponding video on [YouTube](https://studio.youtube.com/channel/UC6ryWzulr-Xom2Bym7O_CvQ/videos/upload?filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D)
+1.  **Tutorials**: Basic introductions to PINNs and DeepONets using both PyTorch and JAX. Most of these examples include corresponding video tutorials on my [YouTube channel](https://www.youtube.com/channel/UC6ryWzulr-Xom2Bym7O_CvQ).
 2.  **RBA**: Code for Residual-Based Attention mechanisms [1]. Our official repository is available at: [rba-pinns](https://github.com/soanagno/rba-pinns).
 3.  **cKANs**: Implementations for the comprehensive comparison between MLP and KAN representations [2].
 4.  **KKANs**: Source code for Kurkova-Kolmogorov-Arnold Networks [3]. Our official repository is available at: [KKANs](https://github.com/jdtoscano94/Kurkova_Kolmogorov_Arnold_Networks_KKANs.git).
