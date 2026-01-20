@@ -10,7 +10,7 @@ I am **Juan Diego Toscano**, a PhD Candidate working under the mentorship of **P
 ### Repository Structure
 The codebase includes separate modules for:
 
-1.  **Tutorials**: Basic introductions to PINNs and DeepONets using both PyTorch and JAX.
+1.  **Tutorials**: Basic introductions to PINNs and DeepONets using both PyTorch and JAX. Most of these examples have a corresponding video on [YouTube](https://studio.youtube.com/channel/UC6ryWzulr-Xom2Bym7O_CvQ/videos/upload?filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D)
 2.  **RBA**: Code for Residual-Based Attention mechanisms [1]. Our official repository is available at: [rba-pinns](https://github.com/soanagno/rba-pinns).
 3.  **cKANs**: Implementations for the comprehensive comparison between MLP and KAN representations [2].
 4.  **KKANs**: Source code for Kurkova-Kolmogorov-Arnold Networks [3]. Our official repository is available at: [KKANs](https://github.com/jdtoscano94/Kurkova_Kolmogorov_Arnold_Networks_KKANs.git).
@@ -21,7 +21,7 @@ The codebase includes separate modules for:
 
 **Note on Repository Structure:**
 * **RBA and cKANs:** These directories are **self-contained**. They can be run directly as standalone scripts, provided you have a valid JAX installation.
-* **KKANS and vRBA (and SSBroyden):** To use the Variational Residual-Based Adaptivity framework and our highly accurate **SSBroyden** optimizer, you must install the `Crunch` library using the steps below.
+* **KKANS and vRBA (and SSBroyden):** To use our KKANS, our Variational Residual-Based Adaptivity framework and our highly accurate **SSBroyden** optimizer, you must install the `Crunch` library using the steps below.
 
 ### Setup Instructions (Required for vRBA)
 
