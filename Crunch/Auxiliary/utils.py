@@ -190,3 +190,45 @@ static_options_SSBroyden = {
     'ls_fb_c1_try1': 1e-4, 'ls_fb_c2_try1': 0.8, 'ls_fb_maxiter_try1': 10,
     'ls_fb_c1_try2': 1e-4, 'ls_fb_c2_try2': 0.5, 'ls_fb_maxiter_try2': 25
 }
+
+def save_params_flat(params, save_dir: str, filename_prefix: str='Final'):
+    try:
+        os.makedirs(save_dir, exist_ok=True)
+        # Flatten the dictionary of parameters into a single vector
+        flat_weights, _ = flatten_util.ravel_pytree(params)
+        
+        # Save as _params.npy
+        weights_filepath = os.path.join(save_dir, f"{filename_prefix}_params.npy")
+        np.save(weights_filepath, np.array(flat_weights))
+        print(f"✅ Flat weights saved to: {weights_filepath}")
+    except Exception as e:
+        print(f"❌ Error saving flattened parameters: {e}")
+
+def load_params_flat(initial_params, load_dir: str, filename_prefix: str='Final'):
+    try:
+        # Look for _params.npy to match the save function
+        weights_filepath = os.path.join(load_dir, f"{filename_prefix}_params.npy")
+        
+        if not os.path.exists(weights_filepath):
+            print(f"❌ Error: Weights file not found at {weights_filepath}")
+            return None
+            
+        flat_weights = np.load(weights_filepath)
+        print(f"✅ Flat weights loaded from: {weights_filepath}")
+        
+        _, unflatten_func = flatten_util.ravel_pytree(initial_params)
+        # Verify sizes match
+        expected_size = flatten_util.ravel_pytree(initial_params)[0].size
+        if flat_weights.size != expected_size:
+             print(f"❌ Error: Loaded weights size ({flat_weights.size}) does not match "
+                   f"model's expected parameter size ({expected_size}). "
+                   "Model structure may have changed.")
+             return None
+             
+        # Reconstruct the dictionary
+        reconstructed_params = unflatten_func(jnp.array(flat_weights))
+        print("✅ Parameters successfully reconstructed.")
+        return reconstructed_params
+    except Exception as e:
+        print(f"❌ Error loading or reconstructing parameters: {e}")
+        return None
