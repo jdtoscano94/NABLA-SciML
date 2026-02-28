@@ -1,6 +1,15 @@
 # A Variational Framework for Residual-Based Adaptivity (vRBA)
 
+A principled variational framework for adaptive sampling and weighting in Physics-Informed Neural Networks (PINNs) and Neural Operators, published at **npj Artificial Intelligence**.
 
+> Residual-based adaptive strategies are widely used in scientific machine learning yet remain largely heuristic. We introduce a variational framework that formalizes these methods through convex transformations of the residual, where different transformations correspond to distinct objective functionals. For instance, exponential weights target uniform error minimization, while linear weights recover quadratic error minimization. This perspective reveals adaptive weighting as a means of selecting sampling distributions that optimize a primal objective, directly linking discretization choices to error metrics. This principled approach yields three key benefits: it enables systematic design of adaptive schemes, reduces discretization error by lowering estimator variance, and enhances learning dynamics by improving gradient signal-to-noise ratio. Extending the framework to operator learning, we demonstrate substantial performance gains across diverse optimizers and architectures.
+
+
+
+(DOI coming soon) Our paper has beed accepted at npj Artificial Intelligence. In the meantime you can read our preprint at arXiv: [arXiv:2509.14198](https://arxiv.org/abs/2509.14198).
+
+
+## About the Code
 This repository contains the official JAX implementation for the paper: **A Variational Framework for Residual-Based Adaptivity in Neural PDE Solvers and Operator Learning**.
 
 This code provides a JAX-native implementation of **vRBA**, a principled adaptive sampling and weighting method for PINNs and Neural Operators. It also includes a custom, high-performance **SSBroyden optimizer** for second-order training to accelerate convergence and achieve state-of-the-art accuracy.
@@ -13,7 +22,24 @@ Residual-based adaptive methods are powerful but often heuristic. Our work intro
 
 The core idea is to connect adaptive schemes to a primal optimization objective using convex transformations of the PDE residual. This establishes a direct link between the choice of sampling distribution and the error metric being minimized. For example:
 * **Exponential weights** correspond to minimizing the **$L^\infty$ (uniform) error**.
-* **Linear/quadratic weights** correspond to minimizing the **$L^2$ (mean-squared) error**.
+* **Linear/quadratic weights** correspond to Variance Minimization.
+* **Other potentials** Our framework allows for a wide range of potentials (e.g., $(r+1)log(r+1)$, $\cosh(r)$, etc), enabling the design of adaptive schemes tailored to specific error metrics or optimization objectives.
+
+
+**Table: Summary of the seven generated adaptive schemes.** The choice of potential $\Phi(r)$ determines the update rule for the sampling distribution $q$ and the strategy for the regularizer $\epsilon$. Note that the Baseline is simply the linear potential case, where the induced distribution is uniform.
+
+| **Name** | **Potential** $\Phi(r)$ | **Optimal Dist.** $q(x) \propto$ | **Regularizer** $\epsilon$ |
+|---|---|---|---|
+| Baseline (Uniform) | $r$ | $1$ | N/A |
+| Quadratic (RAD/RBA) | $r^2 + 1$ | $r$ | Analytic |
+| Exponential (Attention) | $e^r$ | $e^r$ | Any |
+| Polynomial ($L^p$) | $r^p$ | $r^{p-1}$ | Analytic |
+| Dual-KL | $(1+r)\log(1+r) - r$ | $\log(1+r)$ | Newton |
+| Hybrid Robust | $\cosh(r)$ | $\sinh(r)$ | Newton |
+| Super-Exponential | $e^{r^2}$ | $r e^{r^2}$ | Newton |
+
+
+
 
 This approach transforms adaptive sampling from a heuristic into a principled optimization strategy.
 
@@ -81,7 +107,7 @@ This project has two sets of requirements. The core vRBA framework and PINN expe
     pip install -e .
     ```
 
-#### 2. PyTorch Environment (Operator Learning)
+### 2. PyTorch Environment (Operator Learning)
 
 For running the operator learning tasks, you will need a separate environment with PyTorch and related libraries.
 
@@ -96,7 +122,7 @@ torchinfo==1.8.0
 torchvision==0.22.0
 ```
 
-#### 3. General Dependencies
+### 3. General Dependencies
 
 Both environments will also require:
 * NumPy
