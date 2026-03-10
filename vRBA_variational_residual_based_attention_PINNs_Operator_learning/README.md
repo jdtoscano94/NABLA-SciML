@@ -6,7 +6,7 @@ A principled variational framework for adaptive sampling and weighting in Physic
 
 
 
-(DOI coming soon) Our paper has beed accepted at npj Artificial Intelligence. In the meantime you can read our preprint at arXiv: [arXiv:2509.14198](https://arxiv.org/abs/2509.14198).
+Our paper has beed accepted at npj Artificial Intelligence.[https://www.nature.com/articles/s44387-026-00084-4](https://www.nature.com/articles/s44387-026-00084-4).
 
 
 ## About the Code
@@ -132,10 +132,14 @@ Both environments will also require:
 
 ### [4] Variational Residual-Based Adaptivity (vRBA)
 ```bibtex
-@article{toscano2025variational,
-  title={A Variational Framework for Residual-Based Adaptivity in Neural PDE Solvers and Operator Learning},
-  author={Toscano, Juan Diego and Chen, Daniel T and Oommen, Vivek and Darbon, J{'e}r{\^o}me and Karniadakis, George Em},
-  journal={arXiv preprint arXiv:2509.14198},
-  year={2025}
+@article{toscano2026variational,
+  title={A variational framework for residual-based adaptivity in neural PDE solvers and operator learning},
+  author={Toscano, Juan Diego and Chen, Daniel T and Oommen, Vivek and Darbon, J{\'e}r{\^o}me and Karniadakis, George Em},
+  journal={npj Artificial Intelligence},
+  volume={2},
+  pages={32},
+  year={2026},
+  doi={10.1038/s44387-026-00084-4},
+  url={https://doi.org/10.1038/s44387-026-00084-4}
 }
 ```

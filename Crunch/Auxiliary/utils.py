@@ -232,3 +232,25 @@ def load_params_flat(initial_params, load_dir: str, filename_prefix: str='Final'
     except Exception as e:
         print(f"❌ Error loading or reconstructing parameters: {e}")
         return None
+    
+def save_dataset_h5py(file_path, data_dict):
+    """
+    Saves a Python dictionary of NumPy arrays/scalars to an HDF5 file.
+    """
+    with h5py.File(file_path, 'w') as f:
+        for key, value in data_dict.items():
+            f.create_dataset(key, data=value)
+    print(f"Dataset successfully saved to {file_path}")
+
+
+def load_dataset_h5py(file_path):
+    """
+    Loads an HDF5 file into a Python dictionary containing NumPy arrays/scalars.
+    """
+    loaded_dict = {}
+    with h5py.File(file_path, 'r') as f:
+        for key in f.keys():
+            loaded_dict[key] = f[key][()]
+    print(f"Dataset successfully loaded from {file_path}")
+    return loaded_dict
+
