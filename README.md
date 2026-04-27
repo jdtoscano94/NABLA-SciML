@@ -95,11 +95,15 @@ If you use code from this repository in your research, please consider citing th
 
 ### [4] Variational Residual-Based Adaptivity (vRBA)
 ```bibtex
-@article{toscano2025variational,
-  title={A Variational Framework for Residual-Based Adaptivity in Neural PDE Solvers and Operator Learning},
-  author={Toscano, Juan Diego and Chen, Daniel T and Oommen, Vivek and Darbon, J{'e}r{\^o}me and Karniadakis, George Em},
-  journal={arXiv preprint arXiv:2509.14198},
-  year={2025}
+@article{toscano2026variational,
+  title={A variational framework for residual-based adaptivity in neural PDE solvers and operator learning},
+  author={Toscano, Juan Diego and Chen, Daniel T and Ooomen, Vivek and Darbon, J{\'e}r{\^o}me and Karniadakis, George Em},
+  journal={NPJ Artificial Intelligence},
+  volume={2},
+  number={1},
+  pages={32},
+  year={2026},
+  publisher={Nature Publishing Group UK London}
 }
 ```
 
