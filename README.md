@@ -16,7 +16,7 @@ The codebase includes separate modules for:
 4.  **KKANs**: Source code for Kurkova-Kolmogorov-Arnold Networks [3]. Our official repository is available at: [KKANs](https://github.com/jdtoscano94/Kurkova_Kolmogorov_Arnold_Networks_KKANs.git).
 5.  **vRBA**: A Variational Framework for Residual-Based Adaptivity [4]. **Note:** This module includes our custom, highly accurate implementation of the **Self-Scaling Broyden (SSBroyden)** optimizer.
 6.  **AIVT**: The code for Turbulent Thermal Convection [5] is hosted in its own dedicated repository: [Instant-AIVT](https://github.com/jdtoscano94/Instant-AIVT).
-7.  **MR-AIV**: Code for Brain-wide Fluid Flow [6] is hosted in its own dedicated repository: [MR-AIVT]([https://github.com/jdtoscano94/Instant-AIVT](https://github.com/jdtoscano94/MR-AIV.git)).
+7.  **MR-AIV**: Code for Brain-wide Fluid Flow [6] is hosted in its own dedicated repository: [MR-AIVT](https://github.com/jdtoscano94/MR-AIV.git).
 
 ## 🛠️ Installation 
 
