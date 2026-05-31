@@ -123,10 +123,14 @@ If you use code from this repository in your research, please consider citing th
 
 ### [6] MR-AIV (Brain Fluid Flow)
 ```bibtex
-@article{toscano2025mr,
+@article{toscano2026mr,
   title={MR-AIV reveals in vivo brain-wide fluid flow with physics-informed AI},
   author={Toscano, Juan Diego and Guo, Yisen and Wang, Zhibo and Vaezi, Mohammad and Mori, Yuki and Karniadakis, George Em and Boster, Kimberly AS and Kelley, Douglas H},
-  journal={bioRxiv},
-  year={2025}
+  journal={Science Advances},
+  volume={12},
+  number={22},
+  pages={eaeb0404},
+  year={2026},
+  publisher={American Association for the Advancement of Science}
 }
 ```
