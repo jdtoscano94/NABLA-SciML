@@ -5,6 +5,8 @@ Welcome to **$\nabla$ NABLA-SciML**!
 
 I am **Juan Diego Toscano**, a PhD Candidate working under the mentorship of **Prof. George Karniadakis** since 2022. My research delves into the realm of Scientific Machine Learning (SciML), with a specific focus on developing reliable and stable machine learning methods to study and understand complex physical systems that cannot be analyzed using traditional techniques (such as cerebrospinal fluid flow or turbulent flows).
 
+Papers, code, talks, and videos for everything below are collected on my website: **[jdtoscano94.github.io](https://jdtoscano94.github.io)**.
+
 **NABLA** is a collection of my ongoing work and serves as a unified framework for efficient and reproducible implementations of Physics-Informed Neural Networks (PINNs), DeepONets, and newer architectures like KANs.
 
 ### Repository Structure
